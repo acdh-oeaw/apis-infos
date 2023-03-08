@@ -7,6 +7,9 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = ">=3.11"
+django-tables2 = "^2.5.3"
+django-filter = "^2.4.0"
+django-crispy-forms = "^1.10.0"
 Django = "^4.1"
 
 [build-system]

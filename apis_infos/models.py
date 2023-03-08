@@ -1,6 +1,5 @@
 from django.db import models
 from django.urls import reverse
-from browsing.browsing_utils import model_to_dict
 
 
 class ProjectInst(models.Model):
@@ -35,9 +34,6 @@ class ProjectInst(models.Model):
 
     def __str__(self):
         return "{}".format(self.name)
-
-    def field_dict(self):
-        return model_to_dict(self)
 
     @classmethod
     def get_listview_url(self):
@@ -103,9 +99,6 @@ class TeamMember(models.Model):
     def __str__(self):
         return "{}".format(self.name)
 
-    def field_dict(self):
-        return model_to_dict(self)
-
     @classmethod
     def get_listview_url(self):
         return reverse("info:teammember_browse")
@@ -168,9 +161,6 @@ class AboutTheProject(models.Model):
 
     def __str__(self):
         return "{}".format(self.title)
-
-    def field_dict(self):
-        return model_to_dict(self)
 
     @classmethod
     def get_listview_url(self):
