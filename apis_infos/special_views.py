@@ -1,12 +1,6 @@
 from django.views.generic import TemplateView
 
-try:
-    from webpage.utils import PROJECT_METADATA as PM
-except ImportError:
-    from django.conf import settings
-
-    PM = getattr(settings, "PROJECT_DEFAULT_MD")
-from .models import AboutTheProject, TeamMember
+from .models import TeamMember, AboutTheProject
 
 
 class TeamView(TemplateView):
@@ -26,7 +20,7 @@ class SpecialAboutView(TemplateView):
         try:
             object = AboutTheProject.objects.all()[0]
         except IndexError:
-            object = PM
+            object = None
         context = super().get_context_data(**kwargs)
         context["object"] = object
         return context

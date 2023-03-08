@@ -1,5 +1,5 @@
 from django import template
-from infos.models import ProjectInst
+from apis_infos.models import ProjectInst
 
 register = template.Library()
 
